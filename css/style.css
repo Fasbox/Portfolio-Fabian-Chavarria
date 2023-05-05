@@ -214,3 +214,62 @@ section {
 .home-sci a:hover::before {
     width: 100%;
 }
+
+.home-imghover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+.home-imghover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 110%;
+    height: 100%;
+    background: url('/assets/glitch-image1.png') no-repeat;
+    background-size: cover;
+    opacity: 0;
+}
+
+.home-imghover:hover:before {
+    width: 110%;
+    opacity: 1;
+    animation: glitch 3.5s infinite steps(2);
+}
+
+@keyframes glitch {
+    0%, 100%{
+        background: url('/assets/glitch-image.png');
+        background-size: cover;
+    }
+
+    20%{
+        background: url('/assets/glitch-image2.png');
+        background-size: cover;
+        opacity: 1;
+    }
+
+    40%{
+        background: url('/assets/glitch-image3.png');
+        background-size: cover;
+        opacity: 0;
+    }
+
+    60%{
+        background: url('/assets/glitch-image4.png');
+        background-size: cover;
+        opacity: 1;
+    }
+
+    80%{
+        background: url('/assets/glitch-image5.png');
+        background-size: cover;
+        opacity: 0;
+    }
+}
